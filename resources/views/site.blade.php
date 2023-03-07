@@ -1,37 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BOHECO I</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
-    <link rel = "stylesheet" href = "{{asset ('resources/Magnific-Popup-master/dist/magnific-popup.css')}}">
-    <link rel = "stylesheet" href = "{{asset('resources/animate.css-main/animate.css')}}">
-    
-    
-    
+@extends('main')
 
-    
-</head>
-<body>
+@section('content')
 
-  <header class="header" id="intro">
-      @include('layouts.nav')
-      <div class="hero-div center container">
-        <h1 >BOHOL ELECTRIC COOPERATIVE, INC.</h1>
-        <p class="animate__animated animate__fadeInUp animate__slow">Cabulijan, Tubigon, Bohol</p>
-        <div class="hero-btns animate__animated animate__fadeInUp animate__slow">
-          <button type="button" class="btn-trans">SERVICES</button>
-          <button href="#" type="button" class="btn-white">QUICK BILL INQUIRY</button>
-        </div>
-    </div>
-  </header>
-
-  <section class = "service" id="services">
+  <section class = "service" id="service">
     <div class = "container">
       <h1 class="section-title">SERV<span>I</span>CES</h1>
       <div class = "row">
@@ -60,7 +31,7 @@
     </div>
   </section>
 
-  <section class="power">
+  <section class="power" id="power">
     <div class="container">
         <div class="card wow animate__animated animate__fadeInUp animate__slow">
             <div class="card-header">
@@ -108,7 +79,7 @@
   <div class="container-fluid">
     <h1 class="section-title">POWER<span>RATES</span></h1>
     <div class="row">
-      <div class="col-sm-12 col-md-5 col-lg-5">
+      <div class="col-sm-12 col-md-4 col-lg-5 mb-4">
         <div class="card">
           <div class="card-header">
             <h3>Summary (February 2023)</h3>
@@ -197,7 +168,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-7 col-lg-7">
-        <div class="container-fluid">
+        <div class="card-body">
           <div class="card mb-2">
             <figure class="wp-block-image size-large"><img src="./images/rate1.jpg" alt="image" style="height: auto" width="auto"></figure>
           </div>
@@ -217,12 +188,12 @@
 </section>
 
 <!-- ADVISORIES (HEARING, PAHIBALOs, AGMA, etc.) -->
-<section class="advisories">
+<section class="advisories" id="advisories">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6">
       <div class="card mb-2">
-        <div class="card-header">
-          <h5 class="text-center">ADVISORIES(2)</h5>
+        <div class="card-header bg-primary">
+          <h3 class="text-center text-light">ADVISORIES(2)</h3>
         </div>
         <div class="advisory-body">
           <p class="advisory-title text-center">Fri, Mar. 10, 2023</p>
@@ -269,31 +240,31 @@
 
     <div class="col-sm-12 col-md-6 col-lg-6">
       <div class="card mb-2">
-        <div class="card-header">
-          <h5 class="text-center">POWER INTERRUPTIONS (3)</h5>
+        <div class="card-header  bg-primary">
+          <h3 class="text-center text-light">POWER INTERRUPTIONS (3)</h3>
         </div>
         <div class="card-body">
-          <h4 class="text-muted text-center">Wed, Mar. 1, 2023</h4>
+          <h4 class="advisory-title text-center">Wed, Mar. 1, 2023</h4>
           <p>
-            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Wednesday, March 1, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Sitio Causlan, Cawayan and Napo, Inabanga<br><strong>WHY:</strong> relocation of pole and line clearing activities<br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
+            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Wednesday, March 1, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Sitio Causlan, Cawayan and Napo, Inabanga<br><strong>WHY:</strong> Relocation of pole and line clearing activities<br><br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
           </p>
         </div>
       </div>
 
       <div class="card mb-2">
         <div class="card-body">
-          <h4 class="text-muted text-center">Tue, Feb. 28, 2023</h4>
+          <h4 class="advisory-title text-center">Tue, Feb. 28, 2023</h4>
           <p>
-            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Tuesday, February 28, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Brgy. Quezon and Upper Cabacnitan, Batuan<br><strong>WHY:</strong> pole relocation and line clearing activities affected by road improvement project of DPWH<br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
+            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Tuesday, February 28, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Brgy. Quezon and Upper Cabacnitan, Batuan<br><strong>WHY:</strong> Pole relocation and line clearing activities affected by road improvement project of DPWH<br><br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
           </p>
         </div>
       </div>
 
       <div class="card mb-2">
         <div class="card-body">
-          <h4 class="text-muted text-center">Mon, Feb. 27, 2023</h4>
+          <h4 class="advisory-title text-center">Mon, Feb. 27, 2023</h4>
           <p>
-            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Tuesday, February 28, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Brgy. Quezon and Upper Cabacnitan, Batuan<br><strong>WHY:</strong> pole relocation and line clearing activities affected by road improvement project of DPWH<br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
+            <p><strong>WHAT:</strong> BOHECO I Scheduled Power Interruption<br><strong>WHEN:</strong> Tuesday, February 28, 2023 from 9:00AM to 4:00PM<br><strong>WHERE:</strong> Brgy. Quezon and Upper Cabacnitan, Batuan<br><strong>WHY:</strong> pole relocation and line clearing activities affected by road improvement project of DPWH<br><br>We sincerely apologize for the inconvenience this will bring you. We request your patience and understanding on this matter. Rest assured that our team will exert best effort to restore the power the soonest possible time.<br>For further queries, please call our hotline numbers at 09177147493 or 09199950240</p>
           </p>
         </div>
       </div>
@@ -302,46 +273,221 @@
 </div>
 </section>
 
-{{-- Mission Vision --}}
-
-
-<section class = "mission" id="missionvision">
-<div class="container">
+<section class="news">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6">
-      <div class = "service-item wow animate__animated animate__fadeInLeft animate__slow">
-        <div class="icon"><img src="./images/mission.png" /></div>
-        <h1>MISSION</h1>
-        <div class = "line"></div>
-        <p class = "text">Maintaining a Consistent Power Distribution for a Better
-          Service</p>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class = "service-item wow animate__animated animate__fadeInRight animate__slow">
-        <div class="icon"><img src="./images/vision.png" /></div>
-        <h1>VISION</h1>
-        <div class = "line"></div>
-        <p class = "text">Maintaining a Consistent Power Distribution for a Better
-          Service</p>
-      </div>
-    </div>
+    <div class="col-sm-12 col-md-7 col-lg-7">
+   
+        <div class="card mb-2">
+          <div class="card-header bg-primary">
+            <h3 class="text-center text-light">NEWS</h3>
+          </div>
+          
+          <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/agma-2022-1024x702.jpg" alt="image" style="height: auto" width="auto"></figure>
+          <div class="card-body bg-info">
+            <p class="card-title article-title elipsis">42ND AGMA 2022</p>
+            <p class="article-subtitle">September 29, 2022  </p>
+            <div class="card-text">
+              <div class="parent">
+                <div class="block-ellipsis">
+                  <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/agma-2022-1024x702.jpg" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>	
+              </div>					
+            </div>	
+            <br>
+            <a href="https://boheco1.com/index.php/2022/09/29/42nd-agma-2022/" class="btn btn-warning btn-sm"><i class="fa fa-share"></i>Read Article</a>
+
+            </div>	
+        </div>
+
+        <div class="card mb-2 bg-info">
+          <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/september-increase-rate-1024x702.jpg" alt="image" style="height: auto" width="auto"></figure>
+          <div class="card-body">
+            <p class="card-title article-title elipsis">Power Rate Increase</p>
+            <p class="article-subtitle">September 13, 2022  </p>
+            <div class="card-text">
+              <div class="parent">
+                <div class="block-ellipsis">
+                  <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/september-increase-rate-1024x702.jpg" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>	
+              </div>					
+            </div>	
+            <br>
+            <a href="https://boheco1.com/index.php/2022/09/13/power-rate-increase/" class="btn btn-warning btn-sm"><i class="fa fa-share"></i>Read Article</a>
+          </div>	
+        </div>
+
+        <div class="card mb-2 bg-info">
+          <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/Notice-of-Election.jpg" alt="image" style="height: auto" width="auto"></figure>
+          <div class="card-body">
+            <p class="card-title article-title elipsis">Notice of Election</p>
+            <p class="article-subtitle">September 06, 2022  </p>
+            <div class="card-text">
+              <div class="parent">
+                <div class="block-ellipsis">
+                  <figure class="wp-block-image size-large"><img src="http://boheco1.com/wp-content/uploads/2022/09/Notice-of-Election.jpg" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>	
+              </div>					
+            </div>	
+            <br>
+            <a href="https://boheco1.com/index.php/2022/09/06/notice-of-election/" class="btn btn-warning btn-sm"><i class="fa fa-share"></i>Read Article</a>
+
+          </div>	
+        </div>
+  
   </div>
-</div>
+  <div class="col-sm-12 col-md-5 col-lg-5">
+    <div class="card">
+
+      <div class="card-header bg-primary">
+        <h3 class="text-light text-center separation-label">COLLECTION DATES</h3>
+      </div>
+
+      <div class="card-body">
+        <p class="card-content"><p>
+        <table id="tablepress-1" class="tablepress tablepress-id-1 ">
+          <thead>
+          <tr class="row-1 odd">
+            <th class="column-1">Municipality</th><th class="column-2">Date</th>
+          </tr>
+          </thead>
+            <tbody class="row-hover">
+              <tr class="row-2 even">
+                <td class="column-1">Batuan</td><td class="column-2">14</td>
+              </tr>
+              <tr class="row-3 odd">
+                <td class="column-1">Bilar</td><td class="column-2">16</td>
+              </tr>
+              <tr class="row-4 even">
+                <td class="column-1">Catigbian</td><td class="column-2">18</td>
+              </tr>
+              <tr class="row-5 odd">
+                <td class="column-1">San Isidro</td><td class="column-2">17</td>
+              </tr>
+              <tr class="row-6 even">
+                <td class="column-1">Sagbayan</td><td class="column-2">20</td>
+              </tr>
+              <tr class="row-7 odd">
+                <td class="column-1">Clarin</td><td class="column-2">21</td>
+              </tr>
+              <tr class="row-8 even">
+                <td class="column-1">Calape</td><td class="column-2">22 - 24</td>
+              </tr>
+              <tr class="row-9 odd">
+                <td class="column-1">Tubigon</td><td class="column-2">26 - 30</td>
+              </tr>
+              <tr class="row-10 even">
+                <td class="column-1">Loon</td><td class="column-2">4 - 6</td>
+              </tr>
+              <tr class="row-11 odd">
+                <td class="column-1">Balilihan</td><td class="column-2">8</td>
+              </tr>
+              <tr class="row-12 even">
+                <td class="column-1">Inabanga</td><td class="column-2">9 - 10</td>
+              </tr>
+              <tr class="row-13 odd">
+                <td class="column-1">Carmen</td><td class="column-2">11 - 12</td>
+              </tr>
+              <tr class="row-14 even">
+                <td class="column-1">Sevilla</td><td class="column-2">12</td>
+              </tr>
+              <tr class="row-15 odd">
+                <td class="column-1">Lila</td><td class="column-2">15</td>
+              </tr>
+              <tr class="row-16 even">
+                <td class="column-1">Loay</td><td class="column-2">17 - 18</td>
+              </tr>
+              <tr class="row-17 odd">
+                <td class="column-1">Baclayon</td><td class="column-2">20</td>
+              </tr>
+              <tr class="row-18 even">
+                <td class="column-1">Antequera</td><td class="column-2">22</td>
+              </tr>
+              <tr class="row-19 odd">
+                <td class="column-1">Maribojoc</td><td class="column-2">24 - 25</td>
+              </tr>
+              <tr class="row-20 even">
+                <td class="column-1">Dauis</td><td class="column-2">27 - 28</td>
+              </tr>
+              <tr class="row-21 odd">
+                <td class="column-1">Panglao</td><td class="column-2">2 - 3</td>
+              </tr>
+              <tr class="row-22 even">
+                <td class="column-1">Cortes</td><td class="column-2">4</td>
+              </tr>
+              <tr class="row-23 odd">
+                <td class="column-1">Loboc</td><td class="column-2">5</td>
+              </tr>
+              <tr class="row-24 even">
+                <td class="column-1">Dimiao</td><td class="column-2">6</td>
+              </tr>
+              <tr class="row-25 odd">
+                <td class="column-1">Sikatuna</td><td class="column-2">7</td>
+              </tr>
+              <tr class="row-26 even">
+                <td class="column-1">Alburquerque</td><td class="column-2">10</td>
+              </tr>
+              <tr class="row-27 odd">
+                <td class="column-1">Corella</td><td class="column-2">11</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header bg-primary">
+        <h3 class="text-light text-center">PAYMENT PARTNERS</h3>
+      </div>
+    </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-2 mt-2">
+            <div class="card wow animate__animated animate__fadeInLeft animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/unnamed-300x300.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Security Bank</p>
+          </div>
+          </div>	
+            <div class="col-md-6 mb-2 mt-2">
+            <div class="card wow animate__animated animate__fadeInRight animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/HL2AQ2HH4LMMCDR54FL4-58801188-300x158.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Union Bank</p>
+          </div>
+          </div>	
+          <div class="col-md-6 mb-2">
+            <div class="card wow animate__animated animate__fadeInLeft animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/m-lhuiller-logo-300x120-300x120.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">M Lhuiller</p>
+          </div>
+          </div>	
+          <div class="col-md-6 mb-2">
+            <div class="card wow animate__animated animate__fadeInRight animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/20170801115204_palawan-express-palawan-pawnshop-300x200-300x200.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Palawan Pawnshop</p>
+          </div>
+          </div>	
+          <div class="col-md-6 mb-2">
+            <div class="card wow animate__animated animate__fadeInLeft animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/fcb-logo-300x102-300x102.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">FCB</p>
+          </div>
+          </div>	
+            <div class="col-md-6 mb-2">
+          <div class="card wow animate__animated animate__fadeInRight animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/Cebuana-Lhuilier-1-300x107-300x107.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Cebuana Lhuiller</p>
+          </div>
+          </div>	
+          <div class="col-md-6 mb-2">
+            <div class="card wow animate__animated animate__fadeInLeft animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/Landbank_Logo-300x143-300x143.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Landbank</p>
+          </div>
+          </div>	
+          <div class="col-md-6 mb-2">
+            <div class="card wow animate__animated animate__fadeInRight animate__slow">
+              <img src="http://boheco1.com/wp-content/uploads/2018/06/Bank-of-Commerce.jpg" class="card-img-top partners-img">
+              <p style="text-align: center; padding-top: 4px;">Bank of Commerce</p>
+          </div>
+        </div>	                          
+    </div>	
+  </div>
 </section>
-
-
-@include('layouts.footer')
-
-    <script src = "{{asset('resources/jquery-3.5.1.js')}}"></script>
-    <!-- magnific popup -->
-    <script src = "{{asset('resources/Magnific-Popup-master/dist/jquery.magnific-popup.js')}}"></script>
-    <!-- owl carousel -->
-    <script src = "{{asset('resources/OwlCarousel2-2.3.4/dist/owl.carousel.js')}}"></script>
-    <!-- wow js -->
-    <script src = "{{asset('resources/WOW-master/dist/wow.js')}}"></script>
-    {{-- Custom Js --}}
-    <script src = "{{asset('js/script.js')}}">
-
-  </body>
-</html>
+@endsection

@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BillController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AdvisoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('site');
 });
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/bill', [BillController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/advisory', [AdvisoryController::class, 'index']);
+Route::get('/addnews', [NewsController::class, 'create']);
+
+Route::resource('news','App\Http\Controllers\NewsController');
