@@ -20,8 +20,36 @@
 <section class="more">
 
 
+    <header class="mt-5">
+        <img src="{{asset('images/logo.png')}}" alt="Company Name Logo" class="logo-more shadow">
+    </header>
     
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="text-center" style="font-family:Times New Roman;">DIRECTORS</h1>
+            
+            <hr>
+            <div class="mt-2">
+                <img src="{{asset('images/director.jpg')}}" alt="Image">
+            </div>
+        </div>
+        </div>
+        <div class="card shadow mt-3">
+            <div class="card-body">
+                <h1 class="text-center" style="font-family:Times New Roman;">MANAGERS</h1>
+            
+            <hr>
+            <div class="mt-2">
+                <img src="{{asset('images/manager.jpg')}}" alt="Image">
+            </div>
+        </div>
+
+        </div>
+    </div>
+
 </section>
+
 
 
 @include('layouts.footer')

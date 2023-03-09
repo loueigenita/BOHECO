@@ -39,8 +39,15 @@ li{
 p{
     list-style-type: none;
 }
-p, strong {
-    font-weight: bolder
+p, strong , h4 {
+    font-weight: bolder;
+    text-align: center;
+    
+}
+p, strong , h5 {
+    font-weight: bolder;
+    text-align: center;
+    
 }
 
 button{
@@ -120,6 +127,11 @@ section{
     width: 50px;
     height: 50px;  
 }
+.logo-more {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+  }
 .logoname{
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -356,6 +368,13 @@ hr{
     padding-top: 80px;
     
 }
+.justified-text {
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 50px;
+    text-align: center;
+   
+  }
 .news{
     background-image: linear-gradient(60deg, #d8d8d8 0%, #3f3f3f 100%);
     padding-top: 80px;

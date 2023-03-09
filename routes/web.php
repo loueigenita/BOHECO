@@ -28,7 +28,6 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/bill', [BillController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/addnews', [NewsController::class, 'create']);
 Route::get('/addint', [InterruptionController::class, 'create']);

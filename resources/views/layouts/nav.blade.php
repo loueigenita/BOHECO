@@ -25,11 +25,8 @@
             <li> <a href = "{{url('/int')}}" class = "dropdown-item">INTERRUPTIONS</a></li>
           </div>
         </div>
-        <div class = "nav-item">
-          <a href = "{{url('/about')}}" class = "nav-link">ABOUT US</a>
-        </div>
         <div class = "nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href = "#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MORE</a>
+          <a class="nav-link dropdown-toggle" href = "#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ABOUT US</a>
           <div class="dropdown-menu" aria-labelledby="dropdown">
             <li> <a href = "{{route('history.index')}}" class = "dropdown-item">HISTORY</a></li>
             <li> <a href = "{{route('core.index')}}" class = "dropdown-item">CORE VALUES</a></li>
