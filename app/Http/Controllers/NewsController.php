@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class NewsController extends Controller
 {
     /**
@@ -41,7 +43,7 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required',
+            'title' => 'required|min:3|max:255',
             'article' => 'required',
             'dateTime' => 'required',
             'image' => 'required|mimes:jpeg,jpg,bmp,png',
@@ -67,7 +69,7 @@ class NewsController extends Controller
         $news->dateTime = $request->dateTime;
         $news->image = $imagename;
         $news->save();
-
+        Alert::success('Newly Added SuccessFully', ':)');
         return redirect()->route('news.index')->with('toast_success','New News Successfully Created');
     }
 
@@ -108,7 +110,6 @@ class NewsController extends Controller
             'title' => 'required',
             'article' => 'required',
             'dateTime' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,bmp,png',
         ]);
         $new = News::find($id);
         $image=array();
@@ -134,7 +135,8 @@ class NewsController extends Controller
         $new->dateTime = $request->dateTime;
         $new->image = $imagename;
         $new->save();
-        
+
+        Alert::success('Updated Successfully ', ':)');
         return redirect()->route('news.index');
     }
 
@@ -152,6 +154,7 @@ class NewsController extends Controller
             unlink('uploads/news/'.$news->image);
         }
         $news->delete();
-        return redirect()->back()->with('toast_success','News Successfully Deleted');
+        Alert::success('Deleted Successfully ', ';)');
+        return redirect()->back();
     }
 }

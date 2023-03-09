@@ -32,8 +32,12 @@
                                 <div class="mb-3 ">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Title</label>
-                                        <input type="text" class="form-control" name="title" placeholder="Title">
+                                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{old('title')}}" >
+                                      
                                     </div>
+                                      @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -41,7 +45,7 @@
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Date</label>
-                                        <input type="text" class="form-control" name="dateTime" id="dateTime"  placeholder="M/D/Y">
+                                        <input type="text" class="form-control" name="dateTime" id="dateTime" value="{{old('dateTime')}}"  placeholder="M/D/Y">
                                     </div>
                                 </div>
                             </div>
@@ -51,8 +55,11 @@
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Article</label>
-                                        <textarea class="form-control" rows="3" name="article"  placeholder="Article"></textarea>
+                                        <textarea class="form-control" rows="3" name="article" placeholder="Article">{{old('article')}}</textarea>
                                     </div>
+                                    @error('article')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -65,9 +72,11 @@
                                         <label class="form-label">Image</label>
                                         <input class="form-control" type="file" name="image" onchange="preview()" multiple>
                                 </div>
-                                <img id="frame" class="img-fluid" src="" alt="No Available Image">
+                                <img id="frame" class="img-fluid" src="" alt="No Available Image" value="{{old('image')}}">
                             </div>
-
+                            @error('image')
+                                  <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
             
                             <button type="submit" class="btn btn-sm btn-primary mt-2">Submit</button>
                             <a href="{{ route('news.index') }}" class="btn btn-sm btn-warning mt-2">Back</a>

@@ -31,8 +31,14 @@
                                 <div class="mb-3 ">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Place</label>
-                                        <input type="text" class="form-control" name="place" placeholder="Place">
+                                        <input type="text" class="form-control" name="place" placeholder="Place"  value="{{old('place')}}">
                                     </div>
+                                    @error('place')
+                                    <span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    </span>
+                                            
+                                        @enderror
                                 </div>
                             </div>
 
@@ -41,7 +47,7 @@
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Date</label>
-                                        <input type="text" class="form-control" name="dateTime" id="dateTime">
+                                        <input type="text" class="form-control" name="dateTime" id="dateTime"  value="{{old('dateTime')}}">
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +56,11 @@
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Information</label>
-                                        <textarea class="form-control" rows="8" name="info"  placeholder="Information"></textarea>
+                                        <textarea class="form-control" rows="8" name="info" placeholder="Information">{{old('info')}}</textarea>
                                     </div>
+                                    @error('info')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
 

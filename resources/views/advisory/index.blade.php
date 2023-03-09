@@ -43,11 +43,10 @@
                             
                             <a href="{{ route('advisory.edit', $adv) }}" class="btn btn-sm btn-success">Edit</a>
 
-                            <form action="{{ route('advisory.destroy', $adv) }}" method="post" class="d-inline">
+                            <form action="{{ route('advisory.destroy', $adv->id) }}" method="POST" class="d-inline">
                                 @csrf
-                                @method('delete')
-                                <button type="button" class="btn btn-sm btn-danger"onclick="confirm('Are you sure you want to delete this?') ? this.parentElement.submit() : ''">Delete
-                                </button>
+                                @method('DELETE')
+                                <button type="button" data-placement="bottom" onclick="deleteAdvisory()" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </form>
                         </div>
                     </div>
@@ -61,6 +60,7 @@
             </div>
           </div>
     </div>
+    @include('sweetalert::alert')
 </section>
 
 @include('layouts.footer')
@@ -82,6 +82,24 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+<script>
+    function deleteAdvisory() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete this?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Proceed'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the form
+                document.forms[0].submit();
+            }
+        });
+    }
+</script
 
 </body>
 </html>

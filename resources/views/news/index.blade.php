@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
+
     
 </head>
 <body>
@@ -58,11 +62,11 @@
                           <button class="btn btn-sm btn-success" type="submit"><i class="fas fa-pen"></i></button>
                           </a>
 
-                          <form action="{{ route('news.destroy', $new) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('delete')
-                          <button class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Delete News" onclick="confirm('Are you sure you want to delete this?') ? this.parentElement.submit() : ''"><i class="fas fa-trash"></i></button>
-                          </form>
+                          <form action="{{ route('news.destroy', $new->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" data-placement="bottom" onclick="deletePost()" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                            </form>
                          
                       </div>
                   </div>
@@ -77,8 +81,14 @@
           </div>
         </div>
       </div>
+      @include('sweetalert::alert')
     </section>
 @include('layouts.footer')
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
 
 <script src="{{asset('resources/jquery-3.5.1.js')}}"></script>
 <!-- magnific popup -->
@@ -92,5 +102,29 @@
 <script src="{{asset('js/script.js')}}">
 <script type='text/javascript' src='https://boheco1.com/wp-includes/js/wp-embed.min.js?ver=5.4.12'></script>
 <script type='text/javascript' src='https://boheco1.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+
+
+
+<script>
+    function deletePost() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete this?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Proceed'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the form
+                document.forms[0].submit();
+            }
+        });
+    }
+</script
+
+
+
 </body>
 </html>
