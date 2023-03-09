@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Interruption;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class InterruptionController extends Controller
 {
@@ -51,6 +52,7 @@ class InterruptionController extends Controller
         $interruptions->why = $request->why;
         
         $interruptions->save();
+        Alert::success('Newly Added SuccessFully', ':)');
         return redirect()->route('int.index')->with('toast_success','Successfully Saved');
     }
 
@@ -99,6 +101,7 @@ class InterruptionController extends Controller
         $interruption->why = $request->why;
         
         $interruption->save();
+        Alert::success('Updated SuccessFully', ':)');
         return redirect()->route('int.index')->with('toast_success','Successfully Saved');
     }
 
@@ -112,6 +115,7 @@ class InterruptionController extends Controller
     {
         $interruption = Interruption::find($id);
         $interruption->delete();
+        Alert::success('Deleted SuccessFully', '<i class="fa fa-thumbs-down"></i>');
         return redirect()->back()->with('toast_success','Successfully Delete');
     }
 }

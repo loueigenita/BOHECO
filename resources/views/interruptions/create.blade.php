@@ -36,6 +36,9 @@
                                         <label class="control-label">WHAT:</label>
                                         <input type="text" class="form-control" rows="1" name="what"></textarea>
                                     </div>
+                                    @error('what')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -54,6 +57,9 @@
                                         <label class="control-label">WHERE:</label>
                                         <input type="text" class="form-control" rows="" name="where">
                                     </div>
+                                    @error('where')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -63,6 +69,9 @@
                                         <label class="control-label">WHY:</label>
                                         <textarea class="form-control" rows="1" name="why" ></textarea>
                                     </div>
+                                    @error('why')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-sm btn-primary mt-2">Submit</button>

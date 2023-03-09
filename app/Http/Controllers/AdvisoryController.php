@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Advisory;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
 class AdvisoryController extends Controller
 {
     /**
@@ -49,6 +50,7 @@ class AdvisoryController extends Controller
         $advisories->dateTime = $request->dateTime;
         
         $advisories->save();
+        Alert::success('Newly Added Successfully ', ';)');
         return redirect()->route('advisory.index')->with('toast_success','Advisory Successfully Saved');
     }
 
@@ -96,6 +98,7 @@ class AdvisoryController extends Controller
         $advisory->dateTime = $request->dateTime;
        
         $advisory->save();
+        Alert::success('Updated Successfully ', ';)');
         return redirect()->route('advisory.index')->with('toast_success','Successfully Updated');
     }
 
@@ -109,6 +112,8 @@ class AdvisoryController extends Controller
     {
         $advisory = Advisory::find($id);
         $advisory->delete();
-        return redirect()->back()->with('toast_success','Successfully Delete');
+
+        Alert::success('Deleted Successfully ', ';)');
+        return redirect()->back();
     }
 }
