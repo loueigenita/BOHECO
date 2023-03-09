@@ -25,6 +25,7 @@
                     <div class="col-12 text-right">
                         <a href="{{url('addadv')}}" class="btn btn-sm btn-primary">Create Advisory</a>
                     </div>
+                    
                 </div>
                  
                 @foreach ($advisories as $adv)
@@ -33,8 +34,10 @@
                         <div class="card-body">
                             <h4 class="advisory-title text-center">{{$adv->place}}</h4>
                             <p class="text-muted text-center">{{ Carbon\Carbon::parse($adv->dateTime)->format('M d, Y') }}</p>
+                            <hr class="mb-2">
                             <p class="text-center">{{$adv->info}}</p>
                         </div>
+                        
                         
                         <div class="card-footer  text-center ">
                             
@@ -43,7 +46,7 @@
                             <form action="{{ route('advisory.destroy', $adv) }}" method="post" class="d-inline">
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="btn btn-sm btn-danger">Delete
+                                <button type="button" class="btn btn-sm btn-danger"onclick="confirm('Are you sure you want to delete this?') ? this.parentElement.submit() : ''">Delete
                                 </button>
                             </form>
                         </div>

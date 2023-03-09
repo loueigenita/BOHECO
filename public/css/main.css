@@ -351,6 +351,11 @@ hr{
 	text-indent: 20px;
 	font-weight: bold;
 }
+.more{
+    background-image: linear-gradient(60deg, #d8d8d8 0%, #3f3f3f 100%);
+    padding-top: 80px;
+    
+}
 .news{
     background-image: linear-gradient(60deg, #d8d8d8 0%, #3f3f3f 100%);
     padding-top: 80px;

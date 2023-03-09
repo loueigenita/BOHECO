@@ -43,6 +43,7 @@ class InterruptionController extends Controller
             'where' => 'required',
             'why' => 'required'
         ]);
+
         $interruptions = new Interruption();
         $interruptions->what = $request->what;
         $interruptions->dateTime = $request->dateTime;
@@ -50,7 +51,7 @@ class InterruptionController extends Controller
         $interruptions->why = $request->why;
         
         $interruptions->save();
-        return redirect()->route('interruptions.index')->with('toast_success','Successfully Saved');
+        return redirect()->route('int.index')->with('toast_success','Successfully Saved');
     }
 
     /**
@@ -98,7 +99,7 @@ class InterruptionController extends Controller
         $interruption->why = $request->why;
         
         $interruption->save();
-        return redirect()->route('interruptions.index')->with('toast_success','Successfully Saved');
+        return redirect()->route('int.index')->with('toast_success','Successfully Saved');
     }
 
     /**

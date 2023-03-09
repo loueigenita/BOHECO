@@ -28,6 +28,16 @@
           <div class = "nav-item">
             <a href = "{{url('/about')}}" class = "nav-link">ABOUT US</a>
           </div>
+
+          <div class = "nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href = "#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MORE</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown">
+              <li> <a href = "{{route('history.index')}}" class = "dropdown-item">HISTORY</a></li>
+            <li> <a href = "{{route('core.index')}}" class = "dropdown-item">CORE VALUES</a></li>
+            <li> <a href = "{{route('leaders.index')}}" class = "dropdown-item">LEADERS</a></li>
+            <li> <a href = "{{route('awards.index')}}" class = "dropdown-item">AWARDS</a></li>
+            </div>
+          </div>
   
           @if (Route::has('login'))
           <div class = "nav-item">

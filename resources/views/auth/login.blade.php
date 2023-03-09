@@ -107,7 +107,7 @@
           </div>
       </div>
     </main>
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/loginregister.js')}}"></script>
     <script src = "{{asset('resources/WOW-master/dist/wow.js')}}"></script>
   </body>
   <style>

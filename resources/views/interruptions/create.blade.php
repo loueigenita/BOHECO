@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <link rel = "stylesheet" href = "{{asset ('resources/Magnific-Popup-master/dist/magnific-popup.css')}}">
     <link rel = "stylesheet" href = "{{asset('resources/animate.css-main/animate.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
 
@@ -33,17 +33,17 @@
                             <div class="row">
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">WHAT</label>
-                                        <textarea class="form-control" rows="3" name="what"  placeholder="What"></textarea>
+                                        <label class="control-label">WHAT:</label>
+                                        <input type="text" class="form-control" rows="1" name="what"></textarea>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row ">
-                                <label class="col-form-label">WHEN</label>
+                                <label class="col-form-label">WHEN:</label>
                                 <div class="col-5 mb-4">
-                                    <div class="input-group date" id="datetimes">
-                                        <input type="text" class="form-control" name="dateTime" id="datetimes" placeholder="From - To"/>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" name="dateTime" id="datetimes"/>
                                     </div>
                                 </div>
                             </div>
@@ -51,8 +51,8 @@
                             <div class="row">
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">WHERE</label>
-                                        <textarea class="form-control" rows="3" name="where"  placeholder="Where"></textarea>
+                                        <label class="control-label">WHERE:</label>
+                                        <input type="text" class="form-control" rows="" name="where">
                                     </div>
                                 </div>
                             </div>
@@ -60,8 +60,8 @@
                             <div class="row">
                                 <div class="mb-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">WHY</label>
-                                        <textarea class="form-control" rows="3" name="what"  placeholder="Why"></textarea>
+                                        <label class="control-label">WHY:</label>
+                                        <textarea class="form-control" rows="1" name="why" ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -74,27 +74,21 @@
         </div>
     </section>
 
-    <style>
-        .input-group-append {
-            cursor: pointer;
-        }
-    </style>
-
-
 
     @include('layouts.footer')
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
         $(function() {
-          $('input[name="datetimes"]').daterangepicker({
+          $('input[id="datetimes"]').daterangepicker({
             timePicker: true,
             startDate: moment().startOf('hour'),
             endDate: moment().startOf('hour').add(32, 'hour'),
             locale: {
-              format: 'M/DD hh:mm A'
+              format: 'MMMM d, Y hh:mm A'
             }
           });
         });
@@ -114,6 +108,9 @@
     <script type='text/javascript' src='https://boheco1.com/wp-includes/js/wp-embed.min.js?ver=5.4.12'></script>
     <script type='text/javascript' src='https://boheco1.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
     <script type='text/javascript' src='https://boheco1.com/wp-content/plugins/tablepress/js/jquery.datatables.min.js?ver=1.11'></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 </body>
 </html>

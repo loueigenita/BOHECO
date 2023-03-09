@@ -30,7 +30,6 @@ Route::get('/bill', [BillController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/int', [InterruptionController::class, 'index']);
 Route::get('/addnews', [NewsController::class, 'create']);
 Route::get('/addint', [InterruptionController::class, 'create']);
 Route::get('/addadv', [AdvisoryController::class, 'create']);
@@ -38,3 +37,9 @@ Route::get('/addadv', [AdvisoryController::class, 'create']);
 Route::resource('news','App\Http\Controllers\NewsController');
 Route::resource('advisory', 'App\Http\Controllers\AdvisoryController');
 Route::resource('int', 'App\Http\Controllers\InterruptionController');
+
+// More //
+Route::resource('history', 'App\Http\Controllers\More\HistoryController');
+Route::resource('core', 'App\Http\Controllers\More\CoreController');
+Route::resource('leaders', 'App\Http\Controllers\More\LeaderController');
+Route::resource('awards', 'App\Http\Controllers\More\AwardController');
