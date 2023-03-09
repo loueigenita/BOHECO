@@ -43,6 +43,7 @@ class NewsController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'article' => 'required',
+            'dateTime' => 'required',
             'image' => 'required|mimes:jpeg,jpg,bmp,png',
         ]);
         $image = $request->file('image');
@@ -63,6 +64,7 @@ class NewsController extends Controller
         $news = new News();
         $news->title = $request->title;
         $news->article = $request->article;
+        $news->dateTime = $request->dateTime;
         $news->image = $imagename;
         $news->save();
 
@@ -77,7 +79,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::find($id);
+        return view('news.view', compact('news'));
     }
 
     /**
@@ -104,9 +107,11 @@ class NewsController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'article' => 'required',
+            'dateTime' => 'required',
             'image' => 'required|mimes:jpeg,jpg,bmp,png',
         ]);
         $new = News::find($id);
+        $image=array();
         $image = $request->file('image');
         $slug = Str::slug($request->title);
         if (isset($image))
@@ -118,7 +123,7 @@ class NewsController extends Controller
             {
                 mkdir('uploads/news',0777,true);
             }
-            unlink('uploads/news/'.$new->image);
+          
             $image->move('uploads/news',$imagename);
         }else{
             $imagename = $new->image;
@@ -126,6 +131,7 @@ class NewsController extends Controller
 
         $new->title = $request->title;
         $new->article = $request->article;
+        $new->dateTime = $request->dateTime;
         $new->image = $imagename;
         $new->save();
         

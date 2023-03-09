@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdvisoryController;
+use App\Http\Controllers\InterruptionController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +28,13 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/bill', [BillController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
-Route::get('/advisory', [AdvisoryController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/int', [InterruptionController::class, 'index']);
 Route::get('/addnews', [NewsController::class, 'create']);
+Route::get('/addint', [InterruptionController::class, 'create']);
+Route::get('/addadv', [AdvisoryController::class, 'create']);
 
 Route::resource('news','App\Http\Controllers\NewsController');
+Route::resource('advisory', 'App\Http\Controllers\AdvisoryController');
+Route::resource('int', 'App\Http\Controllers\InterruptionController');

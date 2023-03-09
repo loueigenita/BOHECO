@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BOHECO I</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
+    
 </head>
 <body>
   
   @include('layouts.navbar')
 
-
+    
     <section class="news">
         <div class="container-fluid">
             <div class="card">
@@ -23,7 +23,7 @@
                     <h1>ALL NEWS</h1>
                     
                     <div class="col-12 text-right">
-                        <a href="{{url('addnews')}}" class="btn btn-sm btn-primary">Add News</a>
+                        <a href="{{url('addnews')}}" class="btn btn-sm btn-primary">Create News</a>
                     </div>
                 </div>
                 
@@ -36,7 +36,7 @@
                   <div class="col-md-8">
                       <div class="card-body">
                           <p class="card-title article-title elipsis">{{$new->title}}</p>
-                          <p class="article-subtitle">{{$new->created_at}}</p>
+                          <p class="article-subtitle">{{ Carbon\Carbon::parse($new->dateTime)->format('M d, Y') }}</p>
           
                           <div class="card-text">
                               <div class="parent">
@@ -50,7 +50,7 @@
                               </div>
                           </div>
                           <br>
-                          <a href="https://boheco1.com/index.php/2022/09/13/power-rate-increase/" class="btn btn-warning btn-sm"><i
+                          <a href="{{ route('news.show', $new) }}" class="btn btn-warning btn-sm"><i
                                   class="fa fa-share"></i>Read Article
                           </a>
 
@@ -87,6 +87,7 @@
 <script src="{{asset('resources/OwlCarousel2-2.3.4/dist/owl.carousel.js')}}"></script>
 <!-- wow js -->
 <script src="{{asset('resources/WOW-master/dist/wow.js')}}"></script>
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 {{-- Custom Js --}}
 <script src="{{asset('js/script.js')}}">
 <script type='text/javascript' src='https://boheco1.com/wp-includes/js/wp-embed.min.js?ver=5.4.12'></script>

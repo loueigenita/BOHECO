@@ -47,6 +47,7 @@
     <script src = "{{asset('resources/OwlCarousel2-2.3.4/dist/owl.carousel.js')}}"></script>
     <!-- wow js -->
     <script src = "{{asset('resources/WOW-master/dist/wow.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     {{-- Custom Js --}}
     <script src = "{{asset('js/script.js')}}"></script>
 </body>

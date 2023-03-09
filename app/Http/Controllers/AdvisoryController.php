@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advisory;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 class AdvisoryController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class AdvisoryController extends Controller
      */
     public function index()
     {
-        return view('advisory.index');
+        $advisories = Advisory::all();
+        $advisories = Advisory::paginate(5);
+        return view('advisory.index', compact('advisories'));
     }
 
     /**
@@ -23,7 +26,8 @@ class AdvisoryController extends Controller
      */
     public function create()
     {
-        //
+        $advisories = Advisory::all();
+        return view('advisory.create',compact('advisories'));
     }
 
     /**
@@ -34,7 +38,18 @@ class AdvisoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'place' => 'required',
+            'info' => 'required',
+            'dateTime' => 'required'
+        ]);
+        $advisories = new Advisory();
+        $advisories->place = $request->place;
+        $advisories->info = $request->info;
+        $advisories->dateTime = $request->dateTime;
+        
+        $advisories->save();
+        return redirect()->route('advisory.index')->with('toast_success','Advisory Successfully Saved');
     }
 
     /**
@@ -56,7 +71,8 @@ class AdvisoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $advisory = Advisory::find($id);
+        return view('advisory.edit',compact('advisory'));
     }
 
     /**
@@ -68,7 +84,19 @@ class AdvisoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'place' => 'required',
+            'info' => 'required',
+            'dateTime' => 'required'
+        ]);
+
+        $advisory = Advisory::find($id);
+        $advisory->place = $request->place;
+        $advisory->info = $request->info;
+        $advisory->dateTime = $request->dateTime;
+       
+        $advisory->save();
+        return redirect()->route('advisory.index')->with('toast_success','Successfully Updated');
     }
 
     /**
@@ -79,6 +107,8 @@ class AdvisoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $advisory = Advisory::find($id);
+        $advisory->delete();
+        return redirect()->back()->with('toast_success','Successfully Delete');
     }
 }

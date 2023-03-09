@@ -17,16 +17,28 @@
 
     <div class="navbar-collapse">
       <ul class="navbar-nav text-center">
-        <div class = "nav-item">
-          <a href = "{{ url('/news') }}" class="nav-link">NEWS</a>
+        <div class = "nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href = "#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NEWS AND UPDATES</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown">
+            <li> <a href = "{{url('/news') }}" class = "dropdown-item">NEWS</a></li>
+            <li> <a href = "{{url('/advisory')}}" class = "dropdown-item">ADVISORIES</a></li>
+            <li> <a href = "{{url('/int')}}" class = "dropdown-item">INTERRUPTIONS</a></li>
+          </div>
         </div>
         <div class = "nav-item">
-          <a href = "{{url('/advisory')}}" class = "nav-link">ADVISORIES</a>
-        </div>
-        <div class = "nav-item">
-          <a href = "#interruptions" class = "nav-link">ABOUT US</a>
+          <a href = "{{url('/about')}}" class = "nav-link">ABOUT US</a>
         </div>
 
+        {{-- <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div> --}}
         @if (Route::has('login'))
         <div class = "nav-item">
           
@@ -43,3 +55,6 @@
     
   </div>
 </nav>
+<script>
+  
+</script>
