@@ -62,13 +62,13 @@
                                 required>
                                 <label> <i class="fas fa-lock"></i> Password</label>
                            </div>
-                            {{-- <div class="input-wrap">
+                            <div class="input-wrap">
                                 <input type="password" 
                                 class="inp-field form-control" 
                                 id="passwword-confirm" name="password_confirmation"
                                 required>
                                 <label> <i class="fas fa-unlock"></i> Confirm Password</label>
-                           </div> --}}
+                           </div>
                            <div class="btn-sub">
                            <button type="submit" class="btn btn-primary">
                                     REGISTER

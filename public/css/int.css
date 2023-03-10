@@ -39,22 +39,10 @@ li{
 p{
     list-style-type: none;
 }
-p, strong , h4 {
+p, strong {
     font-weight: bolder;
-    text-align: center;
   
 }
-pp, strong{
-    font-weight: bolder;
-
-  
-}
-p, strong , h5 {
-    font-weight: bolder;
-    text-align: center;
-    
-}
-
 button{
     cursor: pointer;
     outline: 0;

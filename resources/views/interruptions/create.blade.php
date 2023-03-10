@@ -22,7 +22,7 @@
 
         <div class="container">
             <div class="card">
-                <div class="card-heade text-center text-light bg-dark">
+                <div class="card-header text-center text-light bg-dark">
                     <h2>ADD POWER INTERRUPTIONS</h2>
                 </div>
                 <div class="card-body">
