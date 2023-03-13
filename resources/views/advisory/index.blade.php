@@ -22,10 +22,11 @@
             <div class="card bg-secondary">
                 <div class="card-header bg-dark text-light">
                     <h2>ADVISORIES</h2>
+                    @role('admin')
                     <div class="col-12 text-right">
                         <a href="{{url('addadv')}}" class="btn btn-sm btn-primary">Create Advisory</a>
                     </div>
-                    
+                @endrole
                 </div>
                  
                 @foreach ($advisories as $adv)
@@ -38,9 +39,8 @@
                             <p class="text-center">{{$adv->info}}</p>
                         </div>
                         
-                        
+                        @role('admin')
                         <div class="card-footer  text-center ">
-                            
                             <a href="{{ route('advisory.edit', $adv) }}" class="btn btn-sm btn-success">Edit</a>
 
                             <form action="{{ route('advisory.destroy', $adv->id) }}" method="POST" class="d-inline">
@@ -49,6 +49,7 @@
                                 <button type="button" data-placement="bottom" onclick="deleteAdvisory()" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </form>
                         </div>
+                        @endrole
                     </div>
                 </div>
                 @endforeach

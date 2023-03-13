@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Advisory;
 use App\Models\Interruption;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -35,6 +38,15 @@ class HomeController extends Controller
         
         // ]);
 
-        return view('site');
+        // Role::create(['name'=>'user']);
+        // Permission::create(['name'=>'admin']);
+        // $role = Role::findById(1);
+        // $permission = Permission::findById(1);
+
+        // // auth()->user()->givePermissionTo('admin');
+        // // auth()->user()->assignRole('admin');
+        // auth()->user()->assignRole('admin');
+
+        return view('home');
     }
 }

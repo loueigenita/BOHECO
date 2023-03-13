@@ -22,12 +22,12 @@
             <div class="card">
                 <div class="card-header bg-dark text-light">
                     <h1>ALL NEWS</h1>
-                    
+                    @role('admin')
                     <div class="col-12 text-right">
                         <a href="{{url('addnews')}}" class="btn btn-sm btn-primary">Create News</a>
                     </div>
                 </div>
-                
+                @endrole
               @foreach($news as $new)
               <div class="container-fluid mt-2 shadow">
                 <div class="row">
@@ -54,7 +54,7 @@
                           <a href="{{ route('news.show', $new) }}" class="btn btn-warning btn-sm"><i
                                   class="fa fa-share"></i>Read Article
                           </a>
-
+                          @role('admin')
                           <a href="{{ route('news.edit', $new) }}">
                           <button class="btn btn-sm btn-success" type="submit"><i class="fas fa-pen"></i></button>
                           </a>
@@ -64,6 +64,7 @@
                                 @method('DELETE')
                                 <button type="button" data-placement="bottom" onclick="deletePost()" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </form>
+                            @endrole
                          
                       </div>
                   </div>

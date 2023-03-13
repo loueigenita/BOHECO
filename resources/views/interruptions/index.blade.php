@@ -24,10 +24,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
             <div class="card  bg-secondary">
                 <div class="card-header bg-dark text-light">
                     <h2>POWER INTERRUPTIONS</h2>
+                    @role('admin')
                     <div class="col-12 text-right">
                         <a href="{{url('addint')}}" class="btn btn-sm btn-primary">Create Interruptions</a>
                     </div>
+                    @endrole
                 </div>
+
                 @foreach ($interruptions as $int)
                 <div class="container mb-2">
                     <div class="card mt-2">
@@ -50,6 +53,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 For further queries, please call our hotline numbers at <strong> 09177147493 </strong> or <strong> 09199950240</strong>
                             </p>
                         </div>
+                        @role('admin')
                         <div class="card-footer text-center ">
                             <a href="{{ route('int.edit', $int) }}" class="btn btn-sm btn-success">Edit</a>
                             <form action="{{ route('int.destroy', $int->id) }}" method="POST" class="d-inline">
@@ -58,6 +62,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 <button type="button" data-placement="bottom" onclick="deleteInterruptions()" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </form>
                         </div>
+                        @endrole
                     </div>
                 </div>
                 @endforeach
