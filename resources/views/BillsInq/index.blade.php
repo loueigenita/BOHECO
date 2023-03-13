@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="header" id="intro">
-        @include('layouts.nav')
+        @include('layouts.navbar')
     
 
     <div class="hero-div center container mb-5">

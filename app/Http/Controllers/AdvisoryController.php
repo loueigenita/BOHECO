@@ -50,8 +50,8 @@ class AdvisoryController extends Controller
         $advisories->dateTime = $request->dateTime;
         
         $advisories->save();
-        Alert::success('Newly Added Successfully ', ';)');
-        return redirect()->route('advisory.index')->with('toast_success','Advisory Successfully Saved');
+        Alert::success('Added Successfully');
+        return redirect()->route('advisory.index');
     }
 
     /**
@@ -98,8 +98,8 @@ class AdvisoryController extends Controller
         $advisory->dateTime = $request->dateTime;
        
         $advisory->save();
-        Alert::success('Updated Successfully ', ';)');
-        return redirect()->route('advisory.index')->with('toast_success','Successfully Updated');
+        Alert::success('Updated Successfully');
+        return redirect()->route('advisory.index');
     }
 
     /**
@@ -113,7 +113,7 @@ class AdvisoryController extends Controller
         $advisory = Advisory::find($id);
         $advisory->delete();
 
-        Alert::success('Deleted Successfully ', ';)');
+        Alert::success('Deleted Successfully',);
         return redirect()->back();
     }
 }

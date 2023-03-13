@@ -49,6 +49,7 @@ class NewsController extends Controller
             'image' => 'required|mimes:jpeg,jpg,bmp,png',
         ]);
         $image = $request->file('image');
+        // $image[] = $image;  
         $slug = Str::slug($request->title);
         if (isset($image))
         {
@@ -60,6 +61,7 @@ class NewsController extends Controller
                 mkdir('uploads/news',0777,true);
             }
             $image->move('uploads/news',$imagename);
+            // $image[] = $image;
         }else{
             $imagename = "default.png";
         }
@@ -69,8 +71,8 @@ class NewsController extends Controller
         $news->dateTime = $request->dateTime;
         $news->image = $imagename;
         $news->save();
-        Alert::success('Newly Added SuccessFully', ':)');
-        return redirect()->route('news.index')->with('toast_success','New News Successfully Created');
+        Alert::success('Added SuccessFully');
+        return redirect()->route('news.index');
     }
 
     /**
@@ -136,7 +138,7 @@ class NewsController extends Controller
         $new->image = $imagename;
         $new->save();
 
-        Alert::success('Updated Successfully ', ':)');
+        Alert::success('Updated Successfully');
         return redirect()->route('news.index');
     }
 
@@ -154,7 +156,7 @@ class NewsController extends Controller
             unlink('uploads/news/'.$news->image);
         }
         $news->delete();
-        Alert::success('Deleted Successfully ', ';)');
+        Alert::success('Deleted Successfully');
         return redirect()->back();
     }
 }

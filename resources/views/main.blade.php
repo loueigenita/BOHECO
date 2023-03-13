@@ -38,7 +38,7 @@
         @include('layouts.nav')
         
         <div class="hero-div center container">
-          <h1>BOHOL I ELECTRIC COOPERATIVE, INC.</h1>
+          <h1 style="font-family: Times New Roman">BOHOL I ELECTRIC COOPERATIVE, INC.</h1>
           <p class="animate__animated animate__fadeInUp animate__slow">Cabulijan, Tubigon, Bohol</p>
          
           <div class="row center">

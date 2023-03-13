@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advisory;
+use App\Models\Interruption;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,9 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-    public function site(){
+        // $advisories = Advisory::get();
+        // $interruptions = Interruption::get();
+
+        // return view('site', [
+
+        //     'advisories'               => $advisories,
+        //     'interruptions'              => $interruptions,
+        
+        // ]);
+
         return view('site');
     }
 }
