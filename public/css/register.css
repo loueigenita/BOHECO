@@ -210,4 +210,8 @@ label{
         height: 100vh;
         position: revert;
     }
+    .heading h3{
+        margin-left: 76px;
+        
+    }
 }
