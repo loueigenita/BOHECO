@@ -79,14 +79,14 @@
                     <div id="myCarousel-{{ $new->id }}" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner" >
                             <ol class="carousel-indicators">
-                                <li data-bs-target="#myCarousel-{{ $new->id }}" data-bs-slide-to="0" class="active"></li>
-                                <li data-bs-target="#myCarousel-{{ $new->id }}" data-bs-slide-to="1"></li>
-                                <li data-bs-target="#myCarousel-{{ $new->id }}" data-bs-slide-to="2"></li>
+                                @foreach(json_decode($new->image, true) as $index => $img)
+                            <li data-bs-target="#myCarousel-{{ $new->id }}" data-bs-slide-to="{{ $index }}" @if($index == 0) class="active" @endif></li>
+                        @endforeach
                             </ol>
                             @foreach (json_decode($new->image, true) as $index => $img)
                                 <div class="carousel-item @if($index == 0) active @endif" style=" box-shadow: 2px 2px 5px #1b1b1b " >
                                     <figure data-toggle="modal" data-target="#newsView-{{ $new->id }}">
-                                        <img  class="mt-3" src="{{ url('uploads/news/' . $img) }}" alt="Image" style="height: 400px;">
+                                        <img  class="mt-3" src="{{ url('uploads/news/' . $img) }}" alt="Image" style="height: 450px;">
                                     </figure>
                                 </div>
                                 @include('news.view')
