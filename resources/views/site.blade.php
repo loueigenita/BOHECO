@@ -36,7 +36,7 @@
 
     </header>
 
-    
+
     <hr>
     <section class="service" id="service">
         <div class="container">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mt-2" style="background-color: rgba(167, 167, 167, 0.644)">
+                <div class="col-md-6 mt-2" style="background-color: rgba(190, 190, 190, 0.644); box-shadow: 2px 2px 5px #1b1b1b;">
                     <div class="container">
                       <h3><p class="text-center text-white">{{ $new->title }}</p></h2>
                         <p>{{ $new->article }}</p>
@@ -339,7 +339,7 @@
                         <div class="content">
                             <div class="card-body">
                                 @foreach ($advisories as $adv)
-                                @include('advisory.modal') 
+                                @include('advisory.modal')
                                     <div class="container-fluid mb-2 mt-2" data-toggle="modal" data-target="#adv-{{$adv->id}}">
                                         <div class="card mt-2 ">
                                             <div class="card-body" style="box-shadow: 2px 2px 5px #181818">
@@ -365,7 +365,7 @@
                                         </div>
                                     </div>
                                     </div>
-                                    
+
                                 @endforeach
                             </div>
                         </div>
